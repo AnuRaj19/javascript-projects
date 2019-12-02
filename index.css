@@ -1,0 +1,126 @@
+.alignment{
+    height: 5em;
+    width:5em;
+    padding:5px;
+}
+
+.button{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.main {
+    background-color:whitesmoke;
+}
+#new{
+    background-color:white;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    margin-left: 4%;
+    margin-right: 7%;
+    width: 90%;
+    height: 200em;
+    padding: 10em;
+}
+#na{
+    margin-left: 1000%;
+}
+
+
+img{
+    max-width:180px;
+  }
+  input[type=file]{
+  padding:10px;
+  }
+  .image-upload > input
+{
+    display: none;
+}
+
+.image-upload img
+{
+    width: 80px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+.image-upload > input
+{
+
+    display: none;
+}
+.image-upload{
+    display: inline;
+}
+
+.image-upload img
+{
+    width: 80px;
+    cursor: pointer;
+}
+
+.thumb{
+    width:100px;
+    margin:5px;
+    float:left;
+  }
+  
+  .uploader{
+    clear:both;
+  }
+
+  
+
+
+  /* link */
+
+  .Rectangle-1372 {
+    width: 600px;
+    height: 202px;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    border: solid 1px #e8ebf0;
+    background-color: #ffffff;
+  }
+  .Rectangle-56 {
+width: 110px;
+height: 35px;
+border-radius: 5px;
+border: solid 1px #07ac00;
+background-color: rgba(7, 172, 0, 0.1);
+cursor: pointer;
+}
+.Add {
+width: 26px;
+height: 30px;
+font-family: Cairo;
+font-size: 16px;
+font-weight: 600;
+font-style: normal;
+font-stretch: normal;
+line-height: 1.88;
+letter-spacing: normal;
+text-align: right;
+color: #07ac00;
+cursor: pointer;
+}
+.Cancel {
+width: 44px;
+height: 30px;
+font-family: Cairo;
+font-size: 16px;
+font-weight: 600;
+font-style: normal;
+font-stretch: normal;
+line-height: 1.88;
+letter-spacing: normal;
+text-align: center;
+color: #7b8ba7;
+cursor: pointer;
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/home/anusuya/A_Full_stack/white board/index.css">
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.js"
+			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			  crossorigin="anonymous"></script>
+</head>
+
+
+<body class="main">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand"><b>Karpalagai</b></a>
+            </div>
+            <ul class="nav navbar-nav">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                
+                <li><input type="image" src="bold.svg" name="saveForm" class="btTxt submit alignment" onclick="execCommand('bold')" />
+                </li>
+                <li>
+                    <input type="image" src="italic.svg" name="saveForm" class="btTxt submit alignment" onclick="execCommand('italic')" />
+                </li>
+                <li>
+                    <input type="image" src="underline.svg" name="saveForm" class="btTxt submit alignment" onclick="execCommand('underline')" />
+                </li>
+                <li>
+                    <input type="image" src="scissors.svg" name="saveForm" class="btTxt submit alignment" onclick="execCommand('cut')" />
+                </li>
+                <li>
+                    <input type="image" src="papers.svg" name="saveForm" class="btTxt submit alignment" onclick="execCommand('copy')" />
+                </li>
+                <li>
+                    <input type="image" src="paste.svg" name="saveForm" class="btTxt submit alignment" onclick="execCommand('paste')" />
+                </li>
+                <li>
+                    <input type="image" src="align.svg" name="saveForm" class="btTxt submit alignment" onclick="execCommand('justifyLeft')" />
+                </li>
+                <li>
+                    <input type="image" src="justify.svg" name="saveForm" class="btTxt submit alignment" onclick="execCommand('justifyCenter')" />
+                </li>
+                <li>
+                    <input type="image" src="right-alignment.svg" name="saveForm" class="btTxt submit alignment" onclick="execCommand('justifyRight')" />
+                </li>
+                <!-- <li>
+                    <input type="image" src="icons8-link-26.png"  onclick="execCommandWithArg('createLink',prompt('enter url','http://'))" />
+                </li> -->
+                <li>
+                    <input type="image" src="icons8-link-26.png" name="saveForm" class="btTxt submit alignment" onclick="createLink(event)" />
+                </li>
+                <!-- <BUTTON ONCLICK="createLink()">Click to create the link</BUTTON>  -->
+                            
+                
+                <img id="myImg" src="download.svg" name="saveForm" class="btTxt submit alignment" onclick="saveTextAsFile()">
+                
+            
+            </li>
+            <label for="file-input" class="image-upload">
+                <img src="https://goo.gl/pB9rpQ"class="alignment"/>
+            </label>
+            <input id ="file-input"type='file'accept="image/*" onchange="readURL(this);"/>       
+            </li>
+<li>
+       
+</li>
+
+            <!--<div class="image-upload">
+                <label for="file-input">
+                    <img src="https://goo.gl/pB9rpQ"/>
+                </label>
+            
+                <input id="file-input" type="file"/>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </ul>
+        </div>
+    </nav>
+    
+    <div id="new" contenteditable="true">
+    Text Here.....
+    <img id="blah" src="" alt="your image" />
+        </div>
+
+
+
+      
+        <script >
+        
+  
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+//upload image
+"use strict";
+  var myApp = angular.module('myApp', []);
+  function MyCtrl($scope) {
+      $scope.stepsModel = [];
+      $scope.imageUpload = function (event) {
+          var files = event.target.files; //FileList object
+          for (var i = 0; i < files.length; i++) {
+              var file = files[i];
+              var reader = new FileReader();
+              reader.onload = $scope.imageIsLoaded;
+              reader.readAsDataURL(file);
+          }
+      };
+      $scope.imageIsLoaded = function (e) {
+          $scope.$apply(function () {
+              $scope.stepsModel.push(e.target.result);
+          });
+      };
+  }
+
+
+
+
+
+
+
+
+                function saveTextAsFile()
+                {
+                    var textToWrite = document.getElementById("new").innerHTML;
+                    var newTextToWrite=textToWrite.replace(/(<([^>]+)>)/ig,""); 
+                    var repTextToWrite=newTextToWrite.replace("&nbsp","");
+                    var semTextToWrite=repTextToWrite.replace(";","")
+                    //var textFileAsBlob = new Blob([semTextToWrite], {type:'text/pdf',endings:'native'});
+                    var blob = new Blob([semTextToWrite], { type: 'contentType' });
+                    var textFileAsBlob = new File([blob], 'filename', {type: 'contentType'});
+
+                    console.log(alert(textFileAsBlob));
+                    //var fileNameToSaveAs = document.getElementById("na").innerHTML;
+                console.log(semTextToWrite)
+                    var downloadLink = document.createElement("a");
+                    downloadLink.download = textFileAsBlob;
+                    downloadLink.innerHTML = "Download File";
+                    if (window.webkitURL != null)
+                    {
+                        
+                        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+                    }
+                    else
+                    {
+                       
+                        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+                        downloadLink.onclick = destroyClickedElement;
+                        downloadLink.style.display = "none";
+                        document.body.appendChild(downloadLink);
+                    }
+                
+                    downloadLink.click();
+                }
+
+
+
+function createLink() 
+{ 
+	var szURL = prompt("Enter a URL:", "http://");
+	if ((szURL != null) && (szURL != "")) {
+		document.execCommand("CreateLink",false,szURL);
+	}
+}
+
+// function createLink(e){
+//      if(e.target){ 
+//     	var a = window.getSelection().getRangeAt(0);
+//     	var b = a.toString();  
+//     	var z = document.createElement("span");
+//     	var l2 = prompt("Enter URL:", "http://");
+//     		b = b.link(l2);
+//     		z.innerHTML=b;
+//     		a.deleteContents();
+//     		a.insertNode(z) }
+//      else{ 
+//             document.execCommand("CreateLink") }
+//     }
+                
+                </script>
+
+</body>
+
+
+</html>
