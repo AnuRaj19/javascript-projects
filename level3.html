@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>memory</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      #t0,
+      #t1,
+      #t2,
+      #t3 {
+        border-radius: 100%;
+        width: 100px;
+        height: 100px;
+      }
+      #d0,
+      #d1,
+      #d2,
+      #d3,
+      #d4,
+      #d5,
+      #d6 {
+        height: 50px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 style="text-align:center;margin-top: 5%">Remember the Colors<br>Level 3</h3>
+    <div id="content" style="margin-top: 150px;">
+      <table align="center">
+        <tr>
+          <td id="t0" onclick="applycolor0()"></td>
+          <td id="t1" onclick="applycolor1()"></td>
+          <td id="t2" onclick="applycolor2()"></td>
+          <td id="t3" onclick="applycolor3()"></td>
+        </tr>
+      </table>
+
+      <br /><br />
+      <table align="center">
+        <tr>
+          <td
+            id="d0"
+            style="background-color: orange"
+            onclick="getcolor0()"
+          ></td>
+          <td
+            id="d1"
+            style="background-color: green"
+            onclick="getcolor1()"
+          ></td>
+          <td id="d2" style="background-color: red" onclick="getcolor2()"></td>
+          <td
+            id="d3"
+            style="background-color: yellow"
+            onclick="getcolor3()"
+          ></td>
+          <td id="d4" style="background-color: blue" onclick="getcolor4()"></td>
+          <td id="d5" style="background-color: grey" onclick="getcolor5()"></td>
+          <td
+            id="d6"
+            style="background-color: black"
+            onclick="getcolor6()"
+          ></td>
+        </tr>
+      </table>
+
+      <br />
+      <div style="margin-left:45%;margin-top: 2%">
+        <button type="button" class="btn btn-success" onclick="check()">
+          Check
+        </button>
+      </div>
+    </div>
+    <script>
+      var arr = ["red", "orange", "green", "yellow", "blue", "black", "grey"];
+      var narr = [];
+
+      for (i = 0; i < 4; i++) {
+        narr.push(arr[Math.floor(Math.random() * arr.length)]);
+        document.getElementById("t" + i).style.backgroundColor = narr[i];
+        console.log(narr);
+      }
+      function clear() {
+        for (i = 0; i < 4; i++) {
+          document.getElementById("t" + i).style.backgroundColor = "lavender";
+        }
+      }
+      setTimeout(clear, 800);
+
+      function getcolor0() {
+        fillcolor = document.getElementById("d0").style.backgroundColor;
+      }
+      function getcolor1() {
+        fillcolor = document.getElementById("d1").style.backgroundColor;
+      }
+      function getcolor2() {
+        fillcolor = document.getElementById("d2").style.backgroundColor;
+      }
+      function getcolor3() {
+        fillcolor = document.getElementById("d3").style.backgroundColor;
+      }
+      function getcolor4() {
+        fillcolor = document.getElementById("d4").style.backgroundColor;
+      }
+      function getcolor5() {
+        fillcolor = document.getElementById("d5").style.backgroundColor;
+      }
+      function getcolor6() {
+        fillcolor = document.getElementById("d6").style.backgroundColor;
+      }
+
+      var res = [];
+
+      function applycolor0() {
+        document.getElementById("t0").style.backgroundColor = fillcolor;
+        res[0] = fillcolor;
+      }
+      function applycolor1() {
+        document.getElementById("t1").style.backgroundColor = fillcolor;
+        res[1] = fillcolor;
+      }
+      function applycolor2() {
+        document.getElementById("t2").style.backgroundColor = fillcolor;
+        res[2] = fillcolor;
+      }
+      function applycolor3() {
+        document.getElementById("t3").style.backgroundColor = fillcolor;
+        res[3] = fillcolor;
+      }
+
+      function check() {
+        if (
+          narr[0] == res[0] &&
+          narr[1] == res[1] &&
+          narr[2] == res[2] &&
+          narr[3] == res[3] &&
+          narr[4] == res[4]
+        ) {
+            alert("Thanks for playing! You won all the  3 levels")
+            clear();
+        //   var r = confirm("You won! Do you want to continue?");
+        //   if (r == true) {
+        //     location.href = "level.html";
+            
+        //   }
+        // } else {
+        //   var s = confirm("You lost! Do you want to play again?");
+        //   if (s == true) location.reload();
+        //   clear();
+        }
+      }
+    </script>
+  </body>
+</html>
